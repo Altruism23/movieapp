@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDebounce } from "react-use";
-import Search from "./components/search";
+import Search from "./components/Search";
 import Spinner from "./components/Spinner";
 import MovieCard from "./components/MovieCard";
 import { getTrendingMovies, updateSearchCount } from "./appwrite";
@@ -26,7 +26,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   
   const [trendingMovies, setTrendingMovies] = useState([]);
-  
+
   useDebounce(() => setDebouncedSearhTerm(searchTerm), 500, [searchTerm]);
 
   const fetchMovies = async (query = "") => {
